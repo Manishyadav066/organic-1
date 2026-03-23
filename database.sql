@@ -1,5 +1,9 @@
-CREATE DATABASE IF NOT EXISTS ecommerce;
-USE ecommerce;
+DROP TABLE IF EXISTS `order_items`;
+DROP TABLE IF EXISTS `orders`;
+DROP TABLE IF EXISTS `cart`;
+DROP TABLE IF EXISTS `products`;
+DROP TABLE IF EXISTS `categories`;
+DROP TABLE IF EXISTS `users`;
 
 CREATE TABLE `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -44,6 +48,10 @@ CREATE TABLE `orders` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) NOT NULL,
   `total_price` decimal(10,2) NOT NULL,
+  `shipping_name` varchar(100) NOT NULL,
+  `shipping_email` varchar(100) NOT NULL,
+  `shipping_address` text NOT NULL,
+  `payment_method` varchar(50) DEFAULT 'COD',
   `status` enum('Pending','Processing','Shipped','Delivered','Cancelled') DEFAULT 'Pending',
   `created_at` timestamp DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),

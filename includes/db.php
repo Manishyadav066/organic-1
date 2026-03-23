@@ -1,8 +1,8 @@
 <?php
-$host = "sql303.infinityfree.com";
-$user = "if0_41449450";
-$pass = "Manish1273";
-$dbname = "if0_41449450_XXX"; // Update 'XXX' to the actual database name if you masked it
+$host = "db";
+$user = "root";
+$pass = "root";
+$dbname = "organic_db";
 
 $conn = mysqli_connect($host, $user, $pass, $dbname);
 
